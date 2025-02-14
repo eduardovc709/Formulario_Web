@@ -1,0 +1,14 @@
+/*Lo sigueinte es para llamar una parte del esqueleto solo colocando el nombre
+/* h1{
+    color: #120cad
+} */
+
+/*  Lo sigueinte es para llamar una clase y al principio siempre un punto y el nombre de la clase*/
+.titulo{
+    color: #ad220c
+}
+
+/* Lo sigueinte es para llamar un id y al principio siempre un # y el nombre del ID 
+#titulo{
+    color: #ad220c
+}  */
