@@ -1,14 +1,185 @@
+
 /*Lo sigueinte es para llamar una parte del esqueleto solo colocando el nombre
 /* h1{
     color: #120cad
 } */
-
-/*  Lo sigueinte es para llamar una clase y al principio siempre un punto y el nombre de la clase*/
-.titulo{
-    color: #ad220c
-}
-
-/* Lo sigueinte es para llamar un id y al principio siempre un # y el nombre del ID 
+/* Lo siguiente es para llamar un id y al principio siempre un # y el nombre del ID 
 #titulo{
     color: #ad220c
 }  */
+/*  Lo sigueinte es para llamar una clase y al principio siempre un punto y el nombre de la clase*/
+
+
+/* Se importa el tipo de letra desde google con @import + url()
+esta va a contener todas nuestras fuentes, para este proyecto se uso 
+Uncial Antiqua Stati, 
+Bruno Ace Static
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Uncial+Antiqua&display=swap');
+
+body{
+    font-family: "Uncial Antiqua", serif;
+    /*font-weight: 400;
+    font-style: normal; 
+    background-color: #3674B5;*/
+    background-image: url(./assets/Fondo\ videojuego3.jpg);
+    background-size: cover;
+
+}
+
+/* Se llama el ID del la seccion seleccionar personaje con # */
+#seleccionar-personaje{
+    /* Propiedad de contenedor flexible, esta permite utilizar tecnologia flex  */
+    display: flex;
+    /* Se utiliza para definir la dirección principal del contenedor flexible en vertical.
+    Esto significa que los elementos flexibles dentro del contenedor se colocarán uno debajo del otro,
+    en lugar de alinearse horizontalmente de izquierda a derecha. */
+    flex-direction: column;
+    /* Se utiliza para alinear los elementos flexibles en el centro del contenedor principal.
+    Esto significa que los elementos dentro del contenedor se distribuirán de manera que estén centrados horizontalmente, 
+    dejando el mismo espacio libre en ambos lados del contenedor. */
+    justify-content: center;
+    /* Se utiliza para centrar verticalmente los elementos dentro de un contenedor que utiliza Flexbox o CSS Grid.
+    Esto asegura que todos los elementos hijos estén perfectamente centrados en el eje vertical del contenedor.
+    Esta propiedad es especialmente útil cuando se desea que los elementos estén alineados de manera uniforme dentro de un diseño,
+    facilitando así la creación de diseños más equilibrados y profesionales. */
+    align-items: center;
+    
+}
+
+.titulo{
+    /* Propiedad de color  */
+    color: #ad220c;
+    /* Propiedad de ancho
+    width: 500px;
+    Propiedad de alto
+    height: 50px; */
+    /* Propiedad de fondo 
+    background: #84e0e8;*/
+    /* Propiedad para establecer el tamaño de la letra */
+    font-size: xxx-large;
+}
+
+.subtitulo{
+    /* Propiedad de color  */
+    color: #ad220c;
+    /* Propiedad de tamaño  */
+    font-size: 20px;
+    
+}
+.tarjetas, .tarjetas-ataques{
+    /* Propiedad de contenedor flexible, esta permite utilizar tecnologia flex  */
+    display: flex;
+    /* Establece el espacio entre las filas y las columnas en un diseño de cuadrícula o entre los elementos en un diseño de flexbox */
+    gap: 10;
+
+}
+.tarjetas img{
+    width: 150px;
+}
+.tarjetapersonaje{
+
+    display: flex;
+    background: #202325;
+    font-family: "Bruno Ace", serif;
+    width: 180;
+    height: 100px;
+    /* Establece un relleno uniforme de 10 píxeles alrededor del contenido de un elemento HTML */
+    padding: 20px;
+    /* Se utiliza para que el ancho y alto de un elemento incluyan el padding y el borde, 
+    en lugar de sumarse a ellos. Esto significa que si un elemento tiene un ancho de 100px y un borde de 2px, 
+    el espacio que ocupará en la página será exactamente de 100px, incluyendo el borde y el padding, en lugar de ser mayor.
+    Esta propiedad es útil para evitar problemas de diseño cuando se añaden padding o bordes a los elementos, 
+    ya que asegura que el tamaño del elemento no cambie cuando se añaden estos estilos adicionales.
+    Las dimensiones del elemento se calculan como: ancho = borde + padding + ancho del contenido, y altura = borde + padding + altura del contenido. */
+    box-sizing: border-box;
+    /* Se utiliza para redondear las esquinas de un elemento */
+    border-radius: 100px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+#b-spersonaje{
+    display: flex;
+    background-color: transparent;
+    font-family: "Bruno Ace", serif;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border: 2px solid white;
+}
+
+input {
+    display: flex;
+  }
+input:checked + label {
+    background-color: #5D8BF4;
+}
+input:hover + label {
+    background-color: #f4745d;
+  } 
+input:active + label {
+  background-color: #5df483;
+  } 
+#seleccionar-ataque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .boton-de-ataque img{
+    width: 150px;
+    }
+  .boton-de-ataque {
+    background-color: #010203;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 180px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+  #mensajes {
+    width: 280px;
+    background: #EEEEEE;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #b-reiniciar {
+    border: none;
+    color: #11468F;
+    font-family: 'Poppins', sans-serif;
+  }
+  #datosataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    color: white;
+  }
+  #vidas-jugador, #vidas-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Ataque-Jugador, .Ataque-Enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 360px) {
+    .tarjetas, .tarjetas-ataques {
+      flex-direction: column;
+    }
+  }

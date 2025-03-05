@@ -11,6 +11,9 @@
     function IniciarJuego (){
     //Se deben ocultar las secciones que no se van a tulizar en la primer fase del juego
         //Se utiliza style.dysplay con el valor none para ocultar
+        //Se utiliza getElementById devuelve el elemento que tiene el atributo ID con el valor especificado,
+        //Se utiliza document es un método que permite seleccionar un elemento del documento por medio del valor del atributo id que se le haya asignado al elemento.
+
             let socultarataque = document.getElementById('seleccionar-ataque')
                 socultarataque.style.display = 'none'
             let socultarreiniciar = document.getElementById('reiniciar')
@@ -33,6 +36,7 @@
     }
     //La siguiente funcion permite indicar que ya seleccionaste un personaje del jugador
     function seleccionarpersonaje(){
+
         
         //Se agrega la condición para validar que personaje seleccionado por le jugador
         //Se crean variables para determinar el personaje del jugador
@@ -41,40 +45,41 @@
         let pjohnny = document.getElementById('Johnny')
         let spanjugador = document.getElementById('np-jugador')
 
+        //Se utiliza la propiedad booleana checked que indica si un elemento de entrada, como un checkbox o un radio button, está marcado o no.
         if (pleo.checked){
            
             spanjugador.innerHTML = 'Super Leo'
             //Una vez que se tiene el personaje del jugador se llama la funcion del personaje del enemigo
             seleccionarpersonajeenemigo() 
-            //Se utiliza style.dysplay con el valor block para mostar
+            //Se utiliza style.dysplay con el valor block para mostar pero se cambia a flex para usar css
             let socultarataque = document.getElementById('seleccionar-ataque')
-                socultarataque.style.display = 'block'
-            //Se utiliza style.dysplay con el valor noen para ocultar
+                socultarataque.style.display = 'flex'
+            //Se utiliza style.dysplay con el valor none para ocultar
             let socultarpersonaje = document.getElementById('seleccionar-personaje')
-                socultarpersonaje.style.display = 'none'
+                socultarpersonaje.style.display = 'none' 
         }
         //Se utiliza checked para verificar si esta marcado el check
         else if (plia.checked){
             spanjugador.innerHTML = 'Super Lia'
             //Una vez que se tiene el personaje del jugador se llama la funcion del personaje del enemigo
             seleccionarpersonajeenemigo() 
-            //Se utiliza style.dysplay con el valor block para mostar
+            //Se utiliza style.dysplay con el valor block para mostar pero se cambia a flex para usar css
             let socultarataque = document.getElementById('seleccionar-ataque')
-                socultarataque.style.display = 'block'
-            //Se utiliza style.dysplay con el valor noen para ocultar
+                socultarataque.style.display = 'flex'
+            //Se utiliza style.dysplay con el valor none para ocultar
             let socultarpersonaje = document.getElementById('seleccionar-personaje')
-                socultarpersonaje.style.display = 'none'
+                socultarpersonaje.style.display = 'none' 
         }
         else if (pjohnny.checked){
             spanjugador.innerHTML = 'Johnny Bravo'
             //Una vez que se tiene el personaje del jugador se llama la funcion del personaje del enemigo
             seleccionarpersonajeenemigo() 
-            //Se utiliza style.dysplay con el valor block para mostar
+            //Se utiliza style.dysplay con el valor block para mostar pero se cambia a flex para usar css
             let socultarataque = document.getElementById('seleccionar-ataque')
-                socultarataque.style.display = 'block' 
-            //Se utiliza style.dysplay con el valor noen para ocultar
+                socultarataque.style.display = 'flex' 
+            //Se utiliza style.dysplay con el valor none para ocultar
             let socultarpersonaje = document.getElementById('seleccionar-personaje')
-                socultarpersonaje.style.display = 'none'
+                socultarpersonaje.style.display = 'none' 
         }
         else {
             alert ("Selecciona un personaje")
@@ -129,8 +134,8 @@
     //La siguiente funcion valida quien gano
     function ganador(){
 
-        spanvidasjugador = document.getElementById('vidas-jugador')
-        spanvidasenemigo = document.getElementById('vidas-enemigo')
+        let spanvidasjugador = document.getElementById('vidas-jugador')
+        let spanvidasenemigo = document.getElementById('vidas-enemigo')
 
         if (ataquejugador == ataqueenemigo){
             crearmensaje ("EMPATE")
@@ -162,21 +167,38 @@
     }
     //La siguiente funcion permite indicar al jugador que ataque se seleccionaron y quien gano por cada ataque
     function crearmensaje (resultado){
-        let pmensaje = document.getElementById("mensajes")
+
+        /* let pmensaje = document.getElementById("mensajes")
         let parrafo = document.createElement('p')
         
         parrafo.innerHTML = 'Atacaste con ' + ataquejugador + ' ,Tu enemigo ataco con ' + ataqueenemigo +' ' + resultado
-        pmensaje.appendChild(parrafo)
+        pmensaje.appendChild(parrafo) */
+
+        let sectionMensajes = document.getElementById('resultado')
+        let ataquesDelJugador = document.getElementById('Ataque-Jugador')
+        let ataquesDelEnemigo = document.getElementById('Ataque-Enemigo')
+        
+        let nuevoAtaqueDelJugador = document.createElement('p')
+        let nuevoAtaqueDelEnemigo = document.createElement('p')
+    
+        sectionMensajes.innerHTML = resultado
+        nuevoAtaqueDelJugador.innerHTML = ataquejugador
+        nuevoAtaqueDelEnemigo.innerHTML = ataqueenemigo
+    
+       /*  ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+        ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo) */
 
         
     }
     //La siguiente funcion permite indicar al jugador quien gano la partida
     function crearmensajefinal (resultadofinal){
-        let pmensaje = document.getElementById("mensajes")
-        let parrafo = document.createElement('p')
+        //let pmensaje = document.getElementById("mensajes")
+        let sectionMensajes = document.getElementById('resultado')
+    
+        sectionMensajes.innerHTML = resultadofinal
         
-        parrafo.innerHTML = resultadofinal
-            pmensaje.appendChild(parrafo)
+        /* parrafo.innerHTML = resultadofinal
+            pmensaje.appendChild(parrafo) */
 
         let bfuego = document.getElementById('b-fuego')   
             bfuego.disabled = true
@@ -186,7 +208,8 @@
             btierra.disabled = true
             
         let socultarreiniciar = document.getElementById('reiniciar')
-            socultarreiniciar.style.display = 'block' 
+            //Se cambia de block a flex
+            socultarreiniciar.style.display = 'flex' 
         
     }
     //La siguiente funcion permite recargar la pagina

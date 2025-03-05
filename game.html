@@ -3,51 +3,125 @@
     <head>
         <meta charset="utf-8" />
         <title>The Zhadyck</title>
+        <script src="./js/superjuego.js"></script>
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <!-- Se define la clase para css  -->
-        <h1 class="titulo"> Super Juego 🔥💧🌱</h1>
+        <!--<h1 class="titulo"> Super Juego 🔥💧🌱</h1> -->
         <!-- Se define el ID -->
         <!--   <h1 id="titulo"> Super Juego 🔥💧🌱</h1> -->
 
         <section id="seleccionar-personaje">
-            <h2>Elige tu personaje:</h2>
 
-            <label for = "Leo"> Leo 💧</label>
-            <input type = "radio" name = "Personaje" id="Leo"/>
-            <label for = "Lia"> Lia 🔥</label>
-            <input type = "radio" name = "Personaje" id="Lia"/>
-            <label for = "Johnny"> Johnny Bravo 🌱</label>
-            <input type = "radio" name = "Personaje" id="Johnny"/>
+            <h1 class="titulo">Super Juego</h1> 
+            <!-- <br>
+            <br> -->
+            <h2 class="subtitulo">Elige tu personaje:</h2>
+            
+            <div class="tarjetas">
+
+                <input type = "radio" name = "Personaje" id="Leo"/>
+                <label class="tarjetapersonaje" for = "Leo"> 
+                    <p>Leo</p>
+                    <img src="./assets/Leo.png">
+                </label>
+                
+                <input type = "radio" name = "Personaje" id="Lia"/>
+                <label class="tarjetapersonaje" for = "Lia"> 
+                    <p>Lia</p>
+                    <img src="./assets/Lia.png">
+                </label>
+                
+                <input type = "radio" name = "Personaje" id="Johnny"/>
+                <label class="tarjetapersonaje" for = "Johnny"> 
+                    <p>Johnny Bravo</p>
+                    <img src="./assets/Jhony.webp">
+                </label>
+                
+               
+            </div>
+
+            <!-- <br> -->
 
             <button id="b-spersonaje">Seleccionar</button>
-            
+
         </section>
 
         <section id="seleccionar-ataque">
-            
-            
+
+            <h1 class="titulo">Super Juego</h1> 
+            <!-- <br>
+            <br> -->
+            <!-- Contenedor para los datos del jugados -->
+            <div id="datosataques">
+                <div class="Ataque-Jugador">
+                    <p id="vidas-jugador">3</p>
+                    <p id="np-jugador"></p>
+                    <div id="Ataque-Jugador"></div>
+                    <!-- <p>Tu personaje es <span id="np-jugador"></span> y tiene <span id="vidas-jugador">3</span> vidas</p> -->
+                    
+                </div>
+
+                <div class="Ataque-Enemigo">
+                    <p id="vidas-enemigo">3</p>
+                    <p id="np-enemigo"></p>
+                    <div id="Ataque-Enemigo"></div>
+                    <!-- <p>El personaje de tu enemigo es <span id="np-enemigo"></span> y tiene <span id="vidas-enemigo">3</span> vidas</p> -->
+                    
+                </div>
+            </div>
+            <!-- Se quitan y se pasan a los contenedores de arriba por separado
             <p>Tu personaje es <span id="np-jugador"></span> y tiene <span id="vidas-jugador">3</span> vidas</p>
-            <p>El personaje de tu enemigo es <span id="np-enemigo"></span> y tiene <span id="vidas-enemigo">3</span> vidas</p>
+            <p>El personaje de tu enemigo es <span id="np-enemigo"></span> y tiene <span id="vidas-enemigo">3</span> vidas</p> -->
+
+            <h2 class="subtitulo">Elige tu Ataque:</h2>
+              
+            <!-- Se remplaza por un div
+            <p>Tu personaje es <span id="np-jugador"></span> y tiene <span id="vidas-jugador">3</span> vidas</p>
+            <p>El personaje de tu enemigo es <span id="np-enemigo"></span> y tiene <span id="vidas-enemigo">3</span> vidas</p> -->
+
+            <div>
+
+                <button id="b-fuego" class="boton-de-ataque">Fuego
+                    <img src="./assets/fuego.gif">
+                </button>
+                <button id="b-agua" class="boton-de-ataque">Agua
+                    <img src="./assets/Agua.gif">
+                </button>
+                <button id="b-tierra" class="boton-de-ataque">Tierra
+                    <img src="./assets/piedra.gif">
+                </button>
+
+            </div>
             
+            <!-- Lo sigueinte se remplaza por un div
             <h2>Elige tu ataque 3 veces:</h2>
 
-            <p>
+            <p> 
                 <button id="b-fuego">Fuego 🔥</button>
                 <button id="b-agua">Agua 💧</button>
                 <button id="b-tierra">Tierra 🌱</button>
-            </p>
-        </section>
+            </p> -->
+            <div id="mensajes">
+                <!-- <section id="mensajes">Suerte
+                </section> -->
+                <div id="resultado"> Mucha suerte</div>
 
-        <section id="mensajes">
+                <section id="reiniciar">
+                    <button id="b-reiniciar">Reiniciar</button>
+                </section>
+
+            </div>
             
-        </section>
+            <!-- Lo sigueinte se cambia y se ponen en contenedores por separado arriba
+            <div>
+                
+                </div id= "Ataque-Jugador" div>
+                </div id= "Ataque-Enemigo" div>
+                
+            </div> -->
 
-        <section id="reiniciar">
-            <button id="b-reiniciar">Reiniciar</button>
         </section>
-        <script src="./js/superjuego.js"></script>
-        
     </body>
 </html>
